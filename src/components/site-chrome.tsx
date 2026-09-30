@@ -1,13 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Phone, MessageCircle, Mail, MapPin, Wrench } from "lucide-react";
+import { Menu, X, Phone, MessageCircle, Mail, MapPin, CarFront } from "lucide-react";
 import { company, whatsappLink } from "@/lib/site";
 
 const nav = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
-  { to: "/projects", label: "Projects" },
+  { to: "/projects", label: "Vehicles" },
+  { to: "/sell", label: "Sell your car" },
   { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact" },
 ] as const;
@@ -16,11 +17,11 @@ export function Logo() {
   return (
     <Link to="/" className="flex items-center gap-2">
       <span className="grid h-10 w-10 place-items-center rounded-md bg-primary text-primary-foreground">
-        <Wrench className="h-5 w-5" />
+        <CarFront className="h-5 w-5" />
       </span>
       <span className="leading-none">
-        <span className="block font-display text-2xl text-navy-foreground">REAFIX</span>
-        <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-ice">Appliance Repairs</span>
+        <span className="block font-display text-2xl text-navy-foreground">MAGNUS MOTORS</span>
+        <span className="block text-[10px] font-semibold uppercase text-ice">Affiliate</span>
       </span>
     </Link>
   );
@@ -32,8 +33,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 bg-navy-deep text-navy-foreground">
       <div className="hidden bg-secondary text-secondary-foreground text-sm md:block">
         <div className="mx-auto flex max-w-7xl justify-between px-6 py-1.5 font-semibold">
-          <span>Fast • Reliable • Affordable • 24/7 Service</span>
-          <span>WhatsApp / Call: {company.phones.join("  •  ")}</span>
+          <span>Vehicles sourced locally and worldwide</span>
+          <span>Call {company.phones[0]} • WhatsApp {company.phones[1]}</span>
         </div>
       </div>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
@@ -49,7 +50,7 @@ export function SiteHeader() {
         </nav>
         <a href={whatsappLink()} target="_blank" rel="noreferrer"
           className="hidden items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-bold uppercase text-primary-foreground hover:brightness-95 lg:inline-flex">
-          <MessageCircle className="h-4 w-4" /> Get a quote
+          <MessageCircle className="h-4 w-4" /> Enquire now
         </a>
         <button className="lg:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
           {open ? <X /> : <Menu />}
@@ -74,7 +75,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
         <div>
           <Logo />
-          <p className="mt-4 max-w-xs text-navy-foreground/70">Car aircon regassing, appliance repairs and electrical work across Zimbabwe.</p>
+          <p className="mt-4 max-w-xs text-navy-foreground/70">Quality vehicles, expert sourcing and import assistance from around the world.</p>
           <p className="mt-4 font-display text-xl text-primary">{company.tagline}</p>
         </div>
         <div>
@@ -113,7 +114,7 @@ export function PageHero({ eyebrow, title, text }: { eyebrow: string; title: str
 
 export function WhatsAppFab() {
   return (
-    <a href={whatsappLink()} target="_blank" rel="noreferrer" aria-label="WhatsApp Reafix"
+    <a href={whatsappLink()} target="_blank" rel="noreferrer" aria-label="WhatsApp Magnus Motors"
       className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-accent text-accent-foreground shadow-bold">
       <MessageCircle className="h-6 w-6" />
     </a>
