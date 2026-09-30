@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep vehicle inventory in `src/lib/site.ts` and reuse it across listings, gallery, and enquiry links so prices and photos cannot drift.
