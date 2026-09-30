@@ -68,7 +68,7 @@ function Index() {
           <h2 className="text-5xl text-navy">Featured services</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {services.map((s, i) => {
-              const Icon = icons[i];
+              const Icon = icons[i] ?? Snowflake;
               return (
                 <div key={s.slug} className="rounded-lg border-2 border-navy bg-card p-7 shadow-bold">
                   <Icon className="h-10 w-10 text-secondary" />

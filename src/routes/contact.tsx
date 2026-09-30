@@ -31,7 +31,7 @@ function Contact() {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.currentTarget));
     const r = schema.safeParse(data);
-    if (!r.success) return setError(r.error.issues[0].message);
+    if (!r.success) return setError(r.error.issues[0]?.message ?? "Please check the form");
     setError(null);
     const v = r.data;
     window.open(whatsappLink(`Hi Reafix, I'm ${v.name} (${v.phone}).\nService: ${v.service}\n${v.message}`), "_blank");
