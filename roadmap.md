@@ -4,3 +4,4 @@
 - [x] Update address, worldwide import service, phone/WhatsApp numbers, email, vehicle prices, and specifications
 - [ ] Admin dashboard (login, manage services/projects/gallery, enquiries) — needs Lovable Cloud, awaiting user go-ahead
 - [ ] Confirm whether the uploaded Nissan NV350 van should be listed (price/details still needed)
+- [ ] Hide 'Edit with Lovable' badge on published site (user reselling website)
