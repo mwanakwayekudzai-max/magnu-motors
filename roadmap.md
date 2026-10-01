@@ -5,3 +5,5 @@
 - [ ] Admin dashboard (login, manage services/projects/gallery, enquiries) — needs Lovable Cloud, awaiting user go-ahead
 - [ ] Confirm whether the uploaded Nissan NV350 van should be listed (price/details still needed)
 - [ ] Hide 'Edit with Lovable' badge on published site (user reselling website)
+
+- [ ] Hide the "Edit with Lovable" badge on the published site (needs paid plan + user approval in popup)
