@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const heroImg = vehicles[0].images[0];
+  const heroImg = vehicles[0]!.images[0]!;
   return (
     <>
       <section className="relative overflow-hidden bg-navy-deep text-navy-foreground">
