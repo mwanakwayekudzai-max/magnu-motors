@@ -6,3 +6,4 @@
 - [ ] Confirm whether the uploaded Nissan NV350 van should be listed (price/details still needed)
 
 - [ ] Hide the "Edit with Lovable" badge on the published site (needs paid plan + user approval in popup)
+- [ ] Reafix website — user will create a NEW Lovable project for it (do not build here; would overwrite Magnus Motors on GitHub/Cloudflare)
