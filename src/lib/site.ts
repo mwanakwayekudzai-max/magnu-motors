@@ -21,6 +21,8 @@ export const company = {
   email: "Magnusmotorsaffiliate@gmail.com",
   address: "106 Nemakonde Way, Avondale West, Zimbabwe",
   mapQuery: "106 Nemakonde Way, Avondale West, Harare, Zimbabwe",
+  instagram: "https://www.instagram.com/magnus_motors_affiliate?stkn=MTg5b2lqNTJsZ2F6MA==",
+  facebook: "https://www.facebook.com/share/1GmNeN5g8Y/",
 };
 
 export const whatsappLink = (text = "Hi Magnus Motors, I'd like to enquire about a vehicle.") =>
