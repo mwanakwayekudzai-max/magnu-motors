@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Phone, MessageCircle, Mail, MapPin, CarFront } from "lucide-react";
+import { Menu, X, Phone, MessageCircle, Mail, MapPin, CarFront, Instagram, Facebook } from "lucide-react";
 import { company, whatsappLink } from "@/lib/site";
 
 const nav = [
@@ -91,6 +91,10 @@ export function SiteFooter() {
           ))}
           <a href={`mailto:${company.email}`} className="flex items-center gap-2 hover:text-primary"><Mail className="h-4 w-4" />{company.email}</a>
           <p className="flex items-center gap-2"><MapPin className="h-4 w-4" />{company.address}</p>
+          <div className="flex gap-3 pt-2">
+            <a href={company.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-md bg-navy-foreground/10 hover:bg-primary hover:text-primary-foreground"><Instagram className="h-5 w-5" /></a>
+            <a href={company.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="grid h-10 w-10 place-items-center rounded-md bg-navy-foreground/10 hover:bg-primary hover:text-primary-foreground"><Facebook className="h-5 w-5" /></a>
+          </div>
         </div>
       </div>
       <div className="border-t border-navy-foreground/10 py-4 text-center text-sm text-navy-foreground/60">
