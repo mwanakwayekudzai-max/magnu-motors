@@ -8,3 +8,4 @@
 - [ ] Push the latest site changes (Instagram/Facebook buttons) to GitHub so Cloudflare rebuilds the live site
 - [ ] Hide the "Edit with Lovable" badge on the published site (needs paid plan + user approval in popup)
 - [ ] Reafix website — user will create a NEW Lovable project for it (do not build here; would overwrite Magnus Motors on GitHub/Cloudflare)
+- [ ] Owner admin page to add cars (/admin) — in progress
