@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { MessageCircle, Search } from "lucide-react";
 import { PageHero } from "@/components/site-chrome";
-import { vehicles, whatsappLink } from "@/lib/site";
+import { whatsappLink } from "@/lib/site";
+import { useVehicles } from "@/lib/use-vehicles";
 
 export const Route = createFileRoute("/vehicles")({
   head: () => ({
@@ -16,9 +17,9 @@ export const Route = createFileRoute("/vehicles")({
   component: Vehicles,
 });
 
-const fuels = ["All fuel types", ...Array.from(new Set(vehicles.map((v) => v.fuel)))];
-
 function Vehicles() {
+  const vehicles = useVehicles();
+  const fuels = ["All fuel types", ...Array.from(new Set(vehicles.map((v) => v.fuel)))];
   const [q, setQ] = useState("");
   const [fuel, setFuel] = useState(fuels[0]);
 
@@ -26,7 +27,7 @@ function Vehicles() {
     const matchesQ = !q || `${v.title} ${v.summary}`.toLowerCase().includes(q.toLowerCase());
     const matchesFuel = fuel === fuels[0] || v.fuel === fuel;
     return matchesQ && matchesFuel;
-  }), [q, fuel]);
+  }), [q, fuel, vehicles]);
 
   return (
     <>
@@ -50,6 +51,7 @@ function Vehicles() {
               <div className="relative">
                 <img src={v.images[0]} alt={v.title} className="aspect-[16/10] w-full object-cover" />
                 <span className="absolute left-3 top-3 rounded bg-primary px-3 py-1 font-display text-xl text-primary-foreground">{v.price}</span>
+                {v.sold && <span className="absolute right-3 top-3 rounded bg-destructive px-3 py-1 font-display text-xl text-destructive-foreground">SOLD</span>}
               </div>
               <div className="p-6">
                 <h2 className="text-3xl text-navy">{v.title}</h2>

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site-chrome";
-import { vehicles } from "@/lib/site";
+import { useVehicles } from "@/lib/use-vehicles";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -14,9 +14,10 @@ export const Route = createFileRoute("/gallery")({
   component: Gallery,
 });
 
-const photos = vehicles.flatMap((v) => v.images.map((src, i) => ({ src, cat: v.title, alt: `${v.title} photo ${i + 1}` })));
+function usePhotos() { return useVehicles().flatMap((v) => v.images.map((src, i) => ({ src, cat: v.title, alt: `${v.title} photo ${i + 1}` }))); }
 
 function Gallery() {
+  const photos = usePhotos();
   return (
     <>
       <PageHero eyebrow="Gallery" title="Our vehicles up close" />
